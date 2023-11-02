@@ -1,0 +1,42 @@
+{
+  "paths": [
+    {
+      "name": "/translate",
+      "lambdaFunction": "amazonTranslateLambda",
+      "privacy": {
+        "private": true,
+        "auth": [
+          "/POST",
+          "/GET",
+          "/PUT",
+          "/PATCH",
+          "/DELETE"
+        ]
+      },
+      "policyResourceName": "/translate"
+    }
+  ],
+  "resourceName": "amazonTranslateAPI",
+  "apiName": "amazonTranslateAPI",
+  "functionArns": [
+    {
+      "lambdaFunction": "amazonTranslateLambda"
+    }
+  ],
+  "privacy": {
+    "auth": 1,
+    "unauth": 0,
+    "authRoleName": "amplify-vfgolddemo-dev-212450-authRole",
+    "unAuthRoleName": "amplify-vfgolddemo-dev-212450-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "amazonTranslateLambda",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}

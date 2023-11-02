@@ -1,0 +1,13 @@
+#ccp-container {
+  height:500px;
+  padding-top: 15px;
+  padding-left: 15px;
+  width: 330px;
+}
+
+.ui.toggle.checkbox input:checked ~ .box:before,
+.ui.toggle.checkbox input:checked ~ .coloring.red:before {
+background: #F25F5C !important;
+}
+
+

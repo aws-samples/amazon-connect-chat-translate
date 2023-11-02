@@ -1,0 +1,14 @@
+{
+  "functionpostInstallScriptName": {
+    "Fn::GetAtt": [
+      "functionpostInstallScript",  
+      "Outputs.Name"
+    ]
+  },
+  "functionpostInstallScriptArn": {
+      "Fn::GetAtt": [
+        "functionpostInstallScript",  
+        "Outputs.Arn"
+      ]
+    }    
+}

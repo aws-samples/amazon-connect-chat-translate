@@ -1,0 +1,48 @@
+{
+  "name": "TranslateBlog",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@aws-amplify/ui-react": "^1.2.1",
+    "@testing-library/jest-dom": "^5.13.0",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^13.1.9",
+    "amazon-connect-chatjs": "^1.1.4",
+    "amazon-connect-streams": "^1.6.8",
+    "aws-amplify": "^4.0.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hooks-global-state": "^1.0.1",
+    "react-scripts": "4.0.3",
+    "semantic-ui-react": "^2.0.3",
+    "web-vitals": "^2.0.1"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "craco eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version"
+    ]
+  },
+  "devDependencies": {
+    "@craco/craco": "^6.1.2",
+    "@semantic-ui-react/craco-less": "^1.2.1",
+    "semantic-ui-less": "^2.4.1"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"12.4.0\",\"stackType\":\"custom-Custom::customhelper\",\"metadata\":{}}",
+  "Parameters": {
+    "env": {
+      "Type": "String"
+    },
+    "functionpostInstallScriptName": {
+      "Type": "String"
+    },
+    "functionpostInstallScriptArn": {
+      "Type": "String"
+    }
+  },
+  "Resources": {
+    "environmentIntegration": {
+      "Type": "Custom::customhelper",
+      "Properties": {
+        "ServiceToken": {
+          "Ref": "functionpostInstallScriptArn"
+        }
+      }
+    }
+  }
+}

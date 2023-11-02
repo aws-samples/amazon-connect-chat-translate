@@ -1,0 +1,148 @@
+{
+  "api": {
+    "amazonTranslateAPI": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "amazonTranslateLambda"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "connecttranslateblog690eb6d1": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "custom": {
+    "environmentIntegration": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "postInstallScript"
+        },
+        {
+          "category": "hosting",
+          "resourceName": "amplifyhosting"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Custom::customhelper"
+    }
+  },
+  "function": {
+    "amazonTranslateLambda": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "postInstallScript": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "providerPlugin": "awscloudformation",
+      "service": "amplifyhosting",
+      "type": "manual"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_amazonTranslateLambda_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amazonTranslateLambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_amazonTranslateLambda_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amazonTranslateLambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_postInstallScript_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "postInstallScript"
+        }
+      ]
+    },
+    "AMPLIFY_function_postInstallScript_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "postInstallScript"
+        }
+      ]
+    },
+    "AMPLIFY_hosting_amplifyhosting_appId": {
+      "usedBy": [
+        {
+          "category": "hosting",
+          "resourceName": "amplifyhosting"
+        }
+      ]
+    },
+    "AMPLIFY_hosting_amplifyhosting_type": {
+      "usedBy": [
+        {
+          "category": "hosting",
+          "resourceName": "amplifyhosting"
+        }
+      ]
+    }
+  },
+  "predictions": {
+    "interpretTextcabd9d8d": {
+      "interpretType": "interpretText",
+      "providerPlugin": "awscloudformation",
+      "service": "Comprehend"
+    },
+    "translateText0519c50f": {
+      "convertType": "translateText",
+      "providerPlugin": "awscloudformation",
+      "service": "Translate"
+    }
+  }
+}

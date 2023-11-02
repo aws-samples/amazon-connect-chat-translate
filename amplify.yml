@@ -1,0 +1,25 @@
+version: 1
+backend:
+  phases:
+    build:
+      commands:
+        - '# Execute Amplify CLI with the helper script'
+        - REACT_APP_CONNECT_INSTANCE_ID=$REACT_APP_CONNECT_INSTANCE_ID
+        - amplifyPush --simple
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - yarn install
+    build:
+      commands:
+        - REACT_APP_CONNECT_REGION=${REACT_APP_CONNECT_REGION}
+        - REACT_APP_CONNECT_INSTANCE_ID=${REACT_APP_CONNECT_INSTANCE_ID}
+        - yarn run build
+  artifacts:
+    baseDirectory: build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
