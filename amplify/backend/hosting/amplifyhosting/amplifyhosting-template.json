@@ -27,9 +27,7 @@
       "Condition": "isManual",
       "Type": "AWS::Amplify::Branch",
       "Properties": {
-        "BranchName": {
-          "Ref": "env"
-        },
+        "BranchName": "nonprod",
         "AppId": {
           "Ref": "appId"
         }
