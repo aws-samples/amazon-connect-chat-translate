@@ -27,7 +27,7 @@ Read the Amazon blog: https://www.amazon.com/livechattranslate
 - Navigate to [Amplify Console](https://console.aws.amazon.com/amplify/)
 - Get Started with Amplify Hosting
 - Connect to Github
-- Select repository - `Amazon-Connect-Chat-Translate-Demo`
+- Select repository - `amazon-connect-chat-translate`
 - Click on 'Create new role' then `Next: Permissions` > `Next: Tags` > `Next: Review` finally `Create role`
 - Click `Create new environment` for backend
 - Expand `Environment variables` and add the below 2
@@ -78,7 +78,7 @@ Once the app is ready, about 8 mins, you then need to update the allow list with
 
 ### Costs
 
-All the services used are included within the [AWS Free tier](https://aws.amazon.com/free/) offer. However, should you exceed this you will be charged for the services consumed. Please see the [clean up](https://github.com/TTEC-Dig-VF/Amazon-Connect-Chat-Translate-Demo#clean-up) section to delete all deployed infrastructure.
+All the services used are included within the [AWS Free tier](https://aws.amazon.com/free/) offer. However, should you exceed this you will be charged for the services consumed. Please see the [clean up](https://github.com/aws-samples/amazon-connect-chat-translate#clean-up) section to delete all deployed infrastructure.
 
 Outside of free tier you will be charged for the consumption of the services used. For example.
 
