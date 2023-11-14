@@ -1,6 +1,6 @@
 # Translate CCP Demo for Amazon Connect
 
-**NOTE: This is a fork of [VoiceFoundry's GitHub repository](https://github.com/voicefoundry-cloud-public/Amazon-Connect-Chat-Translate-Demo) that addresses deployment issues reported by users and provides ability governance to address any future user concerns.** 
+**NOTE: This is a fork of [VoiceFoundry's GitHub repository](https://github.com/voicefoundry-cloud-public/Amazon-Connect-Chat-Translate-Demo) that addresses deployment issues reported by users and provides ability to address any future user concerns.** 
 
 This is a sample project that demonstrates using Amazon Translate with Amazon Connect chat to perform real-time translation on chat messages, allowing a user to support dozens of languages. The web app supports multi-chat allow an Amazon Connect Chat user to support multiple languages concurrently. Deployment is using the Amplify UI (No CLI access required) and is using serverless architecture. Deployment takes about 10 minutes. 
 
