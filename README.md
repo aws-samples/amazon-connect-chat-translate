@@ -1,9 +1,8 @@
-[![Known Vulnerabilities](https://snyk.io/test/github/TTEC-Dig-VF/Amazon-Connect-Chat-Translate-Demo/badge.svg)](https://snyk.io/test/github/TTEC-Dig-VF/Amazon-Connect-Chat-Translate-Demo)
-
-
 # Translate CCP Demo for Amazon Connect
 
-This is a sample project that demonstrates using Amazon Translate with Amazon Connect chat to perform real-time translation on chat messages, allowing a user to support dozens of languages. The web app supports multi-chat allow an Amazon COnnect Chat user to support multiple languages concurrently. Deployment is using the Amplify UI (No CLI access required) and is using serverless architecture. Deployment takes about 10 minutes. 
+**NOTE: This is a fork of [VoiceFoundry's GitHub repository](https://github.com/voicefoundry-cloud-public/Amazon-Connect-Chat-Translate-Demo) that addresses deployment issues reported by users and provides ability to address any future user concerns.** 
+
+This is a sample project that demonstrates using Amazon Translate with Amazon Connect chat to perform real-time translation on chat messages, allowing a user to support dozens of languages. The web app supports multi-chat allow an Amazon Connect Chat user to support multiple languages concurrently. Deployment is using the Amplify UI (No CLI access required) and is using serverless architecture. Deployment takes about 10 minutes. 
 
 Read the Amazon blog: https://www.amazon.com/livechattranslate 
 
@@ -28,10 +27,10 @@ Read the Amazon blog: https://www.amazon.com/livechattranslate
 - Navigate to [Amplify Console](https://console.aws.amazon.com/amplify/)
 - Get Started with Amplify Hosting
 - Connect to Github
-- Select repository - `Amazon-Connect-Chat-Translate-Demo`
+- Select repository - `amazon-connect-chat-translate`
 - Click on 'Create new role' then `Next: Permissions` > `Next: Tags` > `Next: Review` finally `Create role`
 - Click `Create new environment` for backend
-- Expand `Environment variables` and add the below 2
+- Expand `Environment variables` and add the following:
   - `REACT_APP_CONNECT_REGION` = `AWS Region`  (Example `eu-west-2`)
   - `REACT_APP_CONNECT_INSTANCE_URL` = `Amazon Connect URL` (Example `https://<<INSTANCE_NAME>>.awsapps.com` or `https://<<INSTANCE_NAME>>.my.connect.aws`)
 
@@ -39,19 +38,18 @@ Read the Amazon blog: https://www.amazon.com/livechattranslate
 
 <img src="./artifacts/Environment variables.png" width="75%">
 
-
-Once the app is ready, about 8 mins, you then need to update the allow list within the Amazon Connect Console to allow the WebApp to host CCP as an iFrame.
+It will take about 10 minutes for the application to deploy. After successful deployment, add the hosting URL to the Amazon Connect Approved Origin list to allow the web application to embed the CCP as an iFrame.
 
 <img src="./artifacts/Web app deployed.png" width="75%">
 
 * Navigate to the Amazon Connect console (AWS), and select on your Amazon Connect instance name
 * Goto `Approved origins` then `+ Add origin`
-* Enter the URL that Amplify generated for you, then click `Add`  (Example URL `https://main.d13aaabbbccc.amplifyapp.com`, if necessary remove the trailing '/')
+* Enter the Amplify hosting URL, then click `Add`  (Example URL `https://main.d13aaabbbccc.amplifyapp.com`; remove the trailing '/')
 
 ### Testing
 
-* Login to the amplify web app, create an account, then login to Connect
-* Start a customer chat (Goto `https://<yourConnectInstanceURL>/connect/test-chat`)
+* Log in to the Amplify web app, create an account, then login to Amazon Connect
+* Start a customer chat (Go to `https://<yourConnectInstanceURL>/connect/test-chat`)
 * Connect through to your agent that's running the new WebApp
 * As the customer type some text in French and you'll see the agent translate app show 'Translate - (fr) French' 
 * As the agent type in English into the translate textbox and press enter. This will be converted to french and sent back to the customer as french
@@ -79,7 +77,7 @@ Once the app is ready, about 8 mins, you then need to update the allow list with
 
 ### Costs
 
-All the services used are included within the [AWS Free tier](https://aws.amazon.com/free/) offer. However, should you exceed this you will be charged for the services consumed. Please see the [clean up](https://github.com/TTEC-Dig-VF/Amazon-Connect-Chat-Translate-Demo#clean-up) section to delete all deployed infrastructure.
+All the services used are included within the [AWS Free tier](https://aws.amazon.com/free/) offer. However, should you exceed this you will be charged for the services consumed. Please see the [clean up](https://github.com/aws-samples/amazon-connect-chat-translate#clean-up) section to delete all deployed infrastructure.
 
 Outside of free tier you will be charged for the consumption of the services used. For example.
 
@@ -128,8 +126,8 @@ Outside of free tier you will be charged for the consumption of the services use
 Within the amplify UI navigate to your app, on the top right select `Actions` and then `Delete app`.
 
 ### Contributors
-Daniel Bloy
-Bob Strahan
-Vishal Nayak
-EJ Ferrell
-Kishore Dhamodaran
+- Daniel Bloy  
+- Bob Strahan  
+- Vishal Nayak  
+- EJ Ferrell  
+- Kishore Dhamodaran
