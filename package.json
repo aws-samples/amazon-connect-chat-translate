@@ -11,10 +11,10 @@
 		"amazon-connect-chatjs": "^2.2.3",
 		"amazon-connect-streams": "^2.13.3",
 		"aws-amplify": "^6.0.21",
+		"joi": "^17.12.2",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-hooks-global-state": "^2.1.0",
-		"react-scripts": "^5.0.1",
 		"semantic-ui-react": "^2.1.5",
 		"web-vitals": "^3.5.2"
 	},
@@ -42,8 +42,8 @@
 		]
 	},
 	"devDependencies": {
-		"@semantic-ui-react/craco-less": "^3.0.0",
 		"craco-less": "^3.0.1",
+		"r3f-pack": "^2.7.3",
 		"semantic-ui-less": "^2.5.0"
 	}
 }
