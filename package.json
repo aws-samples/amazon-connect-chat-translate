@@ -4,6 +4,7 @@
 	"private": true,
 	"dependencies": {
 		"@aws-amplify/ui-react": "^6.1.6",
+		"@craco/craco": "^7.1.0",
 		"@testing-library/jest-dom": "^6.4.2",
 		"@testing-library/react": "^14.2.2",
 		"@testing-library/user-event": "^14.5.2",
@@ -13,6 +14,7 @@
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-hooks-global-state": "^2.1.0",
+		"react-scripts": "^5.0.1",
 		"semantic-ui-react": "^2.1.5",
 		"web-vitals": "^3.5.2"
 	},
@@ -40,9 +42,8 @@
 		]
 	},
 	"devDependencies": {
-		"react-scripts": "^5.0.1",
-		"@craco/craco": "^7.1.0",
 		"@semantic-ui-react/craco-less": "^3.0.0",
+		"craco-less": "^3.0.1",
 		"semantic-ui-less": "^2.5.0"
 	}
 }
