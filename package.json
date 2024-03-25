@@ -3,7 +3,6 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
-		"postcss": "^8.4.38",
 		"@aws-amplify/ui-react": "^6.1.6",
 		"@craco/craco": "^7.1.0",
 		"@testing-library/jest-dom": "^6.4.2",
