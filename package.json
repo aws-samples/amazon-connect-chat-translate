@@ -13,13 +13,12 @@
 		"aws-amplify": "^6.0.21",
 		"joi": "^17.12.2",
 		"json5": "^2.2.3",
-		"postcss": "8.4.38",
+		"postcss": "^8.4.38",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-hooks-global-state": "^2.1.0",
 		"nth-check":"^2.1.1",
 		"react-router-dom": "^6.22.3",
-		"react-scripts": "^5.0.1",
 		"semantic-ui-react": "^2.1.5",
 		"web-vitals": "^3.5.2"
 	},
@@ -48,6 +47,7 @@
 	},
 	"devDependencies": {
 		"craco-less": "^3.0.1",
+		"react-scripts": "^5.0.1",
 		"semantic-ui-less": "^2.5.0"
 	}
 }
