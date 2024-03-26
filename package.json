@@ -10,7 +10,7 @@
 		"@testing-library/user-event": "^14.5.2",
 		"amazon-connect-chatjs": "^2.2.3",
 		"amazon-connect-streams": "^2.14.0",
-		"aws-amplify": "^6.0.22",
+		"aws-amplify": "^6.0.23",
 		"json5": "^2.2.3",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
@@ -45,7 +45,9 @@
 	"devDependencies": {
 		"craco-less": "^3.0.1",
 		"semantic-ui-less": "^2.5.0",
-		"react-scripts": "^5.0.1"
+		"react-scripts": "^5.0.1",
+		"@semantic-ui-react/craco-less": "^3.0.0",
+		"webpack": "5.91.0"
 	},
 	"resolutions": {
 		"@svgr/webpack": "^5.5.0",
