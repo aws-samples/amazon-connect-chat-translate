@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { autoSignIn, confirmSignUp, signUp } from 'aws-amplify/auth';
+import { Auth, CognitoUser } from '@aws-amplify/auth';
 import { AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react';
 import awsconfig from "./aws-exports";
 import "./App.css";
