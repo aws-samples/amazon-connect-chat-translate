@@ -11,7 +11,7 @@ import "amazon-connect-chatjs";
 import 'semantic-ui-less/semantic.less';
 
 // Amplify imports for base install
-import Amplify from "aws-amplify";
+import { Amplify } from '@aws-amplify';
 import awsExports from "./aws-exports";
 Amplify.configure(awsExports);
 // 
