@@ -67,7 +67,8 @@
 		"@craco/craco": "^7.1.0",
 		"@semantic-ui-react/craco-less": "^3.0.0",
 		"@types/node": "*",
-		"semantic-ui-less": "^2.5.0"
+		"semantic-ui-less": "^2.5.0",
+		"@babel/plugin-proposal-private-property-in-object": "^7.21.11"
 	},
 	"resolutions": {
 		"@svgr/webpack": "^8.1.0",
