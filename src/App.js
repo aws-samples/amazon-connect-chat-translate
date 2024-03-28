@@ -1,27 +1,18 @@
-import { Amplify }  from '@aws-amplify/core';
+import { Amplify } from 'aws-amplify';
+
 import { withAuthenticator } from '@aws-amplify/ui-react';
 import awsconfig from './aws-exports';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './App.css';
 import 'semantic-ui-less/semantic.less';
 import Ccp from './components/ccp';
 
-// Component
+Amplify.configure(awsconfig);
+
 function App({ signOut, user }) {
-  const [isConfigured, setIsConfigured] = useState(false);
-
-  useEffect(() => {
-    configureAuth();
-  }, []);
-
-  const configureAuth = () => {
-    Amplify.default.configure(awsconfig);
-    setIsConfigured(true);
-  };
-
   return (
     <div className="App">
-      {isConfigured && <Ccp user={user} signOut={signOut} />}
+      {<Ccp user={user} signOut={signOut} />}
     </div>
   );
 }
