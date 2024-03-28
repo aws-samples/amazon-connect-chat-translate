@@ -50,13 +50,13 @@ const Ccp = () => {
         // Check if we know the language for this contactId, if not use dectectText(). This process means we only perform comprehend language detection at most once.
         let textLang = '';
           for(var i = 0; i < languageTranslate.length; i++) {
-                if (languageTranslate[i].contactId == contactId) {
+                if (languageTranslate[i].contactId === contactId) {
                     textLang = languageTranslate[i].lang
                      break
                 } 
         }
         // If the contatId was not found in the store, or the store is empty, perform dectText API to comprehend
-        if (localLanguageTranslate.length == 0 || textLang == ''){
+        if (localLanguageTranslate.length == 0 || textLang === ''){
             let tempLang = await detectText(content);
             textLang = tempLang.textInterpretation.language
         }
