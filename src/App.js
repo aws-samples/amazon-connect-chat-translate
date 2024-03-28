@@ -1,23 +1,34 @@
-import React, { Component } from "react";
-import Auth from '@aws-amplify/auth';
-import { AmplifySignOut, withAuthenticator } from '@aws-amplify/ui-react';
-import awsconfig from "./aws-exports";
-import "./App.css";
+import { Auth } from '@aws-amplify/auth';
+import React, { Component } from 'react';
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import awsconfig from './aws-exports';
+import './App.css';
 import 'semantic-ui-less/semantic.less';
+import Ccp from './components/ccp';
 
-// Import components
-import Ccp from "./components/ccp";
-
-Auth.configure(awsconfig);
-
+// Component
 class App extends Component {
-       render() {
-              return (
-                     <div className="App">
-                        <Ccp />
-                     </div>
-              );
-       }
+
+  constructor(props) {
+    super(props);
+    this.configureAuth = this.configureAuth.bind(this);
+  }
+
+  componentDidMount() {
+    this.configureAuth();
+  }
+
+  configureAuth() {
+    Auth.configure(awsconfig);
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Ccp />  
+      </div>
+    );
+  }
 }
 
-export default withAuthenticator(App)
+export default withAuthenticator(App);
