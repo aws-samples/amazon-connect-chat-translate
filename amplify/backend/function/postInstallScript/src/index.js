@@ -6,7 +6,7 @@ exports.handler = async function(event, context, callback) {
 
     var responseStatus;
     var responseData = {};
-    if (event.RequestType == "Create") {
+    if (event.RequestType === "Create") {
         
         var customTerminology = [
         '"en","es","de"',
@@ -29,13 +29,13 @@ exports.handler = async function(event, context, callback) {
         console.log("EVENT TYPE CREATE", createTerminologyRequest);
         return await sendResponse(event, context, responseStatus, responseData);
     }
-    if (event.RequestType == "Update") {
+    if (event.RequestType === "Update") {
         responseStatus = "SUCCESS";
         responseData = {"REQUEST": "nothing"};
         console.log("EVENT TYPE UPDATE");
         return await sendResponse(event, context, responseStatus, responseData);
     }
-    if (event.RequestType == "Delete") {
+    if (event.RequestType === "Delete") {
         
         var deleteTerminologyParams = {
           Name: 'connectChatTranslate' 
