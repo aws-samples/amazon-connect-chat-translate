@@ -1,4 +1,4 @@
-import Predictions, { AmazonAIPredictionsProvider } from '@aws-amplify/predictions';
+import { Predictions } from '@aws-amplify/predictions';
 
 
 async function ProcessChatText(content, sourceLang, tagretLang) {

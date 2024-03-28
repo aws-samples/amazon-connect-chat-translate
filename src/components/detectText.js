@@ -1,4 +1,4 @@
-import Predictions from '@aws-amplify/predictions';
+import { Predictions } from '@aws-amplify/predictions';
 
 async function DetectChatText(content) {
 
