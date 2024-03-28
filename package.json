@@ -28,7 +28,6 @@
 		"json5": "^2.2.3",
 		"nth-check": "^2.1.1",
 		"postcss": "^8.4.38",
-		"postinstallscript": "file:amplify/backend/function/postInstallScript/src",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-hooks-global-state": "^2.1.0",
@@ -38,7 +37,8 @@
 		"semantic-ui-react": "^2.1.5",
 		"typescript": "^5.4.3",
 		"web-vitals": "^3.5.2",
-		"webpack": "^5.91.0"
+		"webpack": "^5.91.0",
+		"@babel/plugin-proposal-private-property-in-object": "^7.21.11"
 	},
 	"scripts": {
 		"start": "craco start",
@@ -81,7 +81,23 @@
 		"craco-less": "^3.0.1",
 		"json5": "^2.2.3",
 		"typescript": "^5.4.3",
+		"@aws-amplify/auth": "^6.0.23",
+		"@aws-amplify/core": "6.0.23",
+		"@aws-amplify/predictions": "6.0.23",
 		"@aws-amplify/storage": "6.0.23",
+		"@aws-amplify/ui-react": "^6.1.6",
+		"amazon-connect-chatjs": "^2.2.4",
+		"amazon-connect-streams": "^2.14.0",
+		"aws-amplify": "^6.0.23",
+		"aws-cdk-lib": "^2.134.0",
+		"constructs": "^10.3.0",
+		"react-router-dom": "^6.22.3",
+		"react-scripts": "^5.0.1",
+		"semantic-ui-less": "^2.5.0",
+		"semantic-ui-react": "^2.1.5",
+		"web-vitals": "^3.5.2",
+		"webpack": "^5.91.0",
+		"@types/node": "*",
 		"@babel/plugin-proposal-private-property-in-object": "^7.21.11"
 	},
 	"overrides": {
