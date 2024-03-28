@@ -4,9 +4,9 @@
 	"private": true,
 	"dependencies": {
 		"@aws-amplify/auth": "^6.0.23",
-		"@aws-amplify/core": "6.0.23",
-		"@aws-amplify/predictions": "6.0.23",
-		"@aws-amplify/storage": "6.0.23",
+		"@aws-amplify/core": "^6.0.23",
+		"@aws-amplify/predictions": "^6.0.23",
+		"@aws-amplify/storage": "^6.0.23",
 		"@aws-amplify/ui-react": "^6.1.6",
 		"@babel/core": "7.24.3",
 		"@babel/plugin-syntax-flow": "^7.24.1",
@@ -82,9 +82,9 @@
 		"json5": "^2.2.3",
 		"typescript": "^5.4.3",
 		"@aws-amplify/auth": "^6.0.23",
-		"@aws-amplify/core": "6.0.23",
-		"@aws-amplify/predictions": "6.0.23",
-		"@aws-amplify/storage": "6.0.23",
+		"@aws-amplify/core": "^6.0.23",
+		"@aws-amplify/predictions": "^6.0.23",
+		"@aws-amplify/storage": "^6.0.23",
 		"@aws-amplify/ui-react": "^6.1.6",
 		"amazon-connect-chatjs": "^2.2.4",
 		"amazon-connect-streams": "^2.14.0",
@@ -110,7 +110,7 @@
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-use": "^17.2.1",
-		"@aws-amplify/storage": "6.0.23",
+		"@aws-amplify/storage": "^6.0.23",
 		"typescript": "^5.4.3"
 	}
 }

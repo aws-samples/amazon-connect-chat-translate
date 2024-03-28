@@ -82,7 +82,7 @@
   dependencies:
     tslib "^2.5.0"
 
-"@aws-amplify/core@6.0.23":
+"@aws-amplify/core@6.0.23", "@aws-amplify/core@^6.0.23":
   version "6.0.23"
   resolved "https://registry.yarnpkg.com/@aws-amplify/core/-/core-6.0.23.tgz#2ee6bef4bcd04442f91f9b35f9cdd03c760eebf9"
   integrity sha512-ihrtkFsZsVO6F+WyIO2fVG4uhEzSqBkgkkMToF6XLBEXx/H2o4wDXiGJkGBz1EhM4pWajr6bPKIJJeFmIrurrg==
@@ -129,7 +129,7 @@
   resolved "https://registry.yarnpkg.com/@aws-amplify/plugin-types/-/plugin-types-0.9.0-beta.1.tgz#066af0646b379b4c999668253e87754e67fc7427"
   integrity sha512-5eJ2SYoXbq4ZSvBjCgStXSejNOKuBkxYVXqOXZP4xP5C9iIpUYG36s9xP+IdhWDm9K/yxklp8OUMr8YGc0g7tw==
 
-"@aws-amplify/predictions@6.0.23":
+"@aws-amplify/predictions@^6.0.23":
   version "6.0.23"
   resolved "https://registry.yarnpkg.com/@aws-amplify/predictions/-/predictions-6.0.23.tgz#ba0cf7edf2bc34428b2bbe35f5d08150bcfc798e"
   integrity sha512-o0EK5xq84z2zqoPeOQlFnIViN4RPwahkV6lNGnC3X4C8IYXI1CqP2eKnYtRGRBbPaEibuT3JNZ7lQ81gdI80lg==
@@ -146,7 +146,7 @@
     tslib "^2.5.0"
     uuid "^9.0.0"
 
-"@aws-amplify/storage@6.0.23":
+"@aws-amplify/storage@6.0.23", "@aws-amplify/storage@^6.0.23":
   version "6.0.23"
   resolved "https://registry.yarnpkg.com/@aws-amplify/storage/-/storage-6.0.23.tgz#04069486a89acbe9ec843c84e4e0cd19af895396"
   integrity sha512-+Chhrrn743B/SjBqsVeQonp6RrmafbEf9GBxioK47zUYKQCbJ/VIUhYKimbkiiIbRqPAyEYVlcrbi0L6i4psIQ==
