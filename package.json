@@ -81,7 +81,8 @@
 		"craco-less": "^3.0.1",
 		"json5": "^2.2.3",
 		"typescript": "^5.4.3",
-		"@aws-amplify/storage": "6.0.23"
+		"@aws-amplify/storage": "6.0.23",
+		"@babel/plugin-proposal-private-property-in-object": "^7.21.11"
 	},
 	"overrides": {
 		"nth-check": "^2.1.1",
