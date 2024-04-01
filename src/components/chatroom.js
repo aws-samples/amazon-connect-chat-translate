@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './chatroom.css';
 import Message from './message.js';
-import translateText from './translate'
+//import translateText from './translate'
 import translateTextAPI from './translateAPI'
 import { addChat, useGlobalState } from '../store/state';
 
@@ -13,7 +13,7 @@ const Chatroom = (props) => {
     const [newMessage, setNewMessage] = useState("");
     const [languageTranslate] = useGlobalState('languageTranslate');
     const [languageOptions] = useGlobalState('languageOptions');
-    const agentUsername = "AGENT";
+    const agentUsername = "agent";
     const messageEl = useRef(null);
     const input = useRef(null);
 
@@ -34,6 +34,7 @@ const Chatroom = (props) => {
             message: content
         });
         const { AbsoluteTime, Id } = awsSdkResponse.data;
+        console.log(AbsoluteTime, Id);
     }
 
     useEffect(() => {
@@ -106,13 +107,17 @@ const Chatroom = (props) => {
 
     return (
         <div className="chatroom">
-                <h3>Translate - ({languageTranslate.map(lang => {if(lang.contactId === currentContactId[0])return lang.lang})}) {getKeyByValue(languageOptions)}</h3>
+                <h3>Translate - ({languageTranslate.map(lang => {if(lang.contactId === currentContactId[0])return lang.lang
+                else 
+                    return null})}) {getKeyByValue(languageOptions)}</h3>
                 <ul className="chats" ref={messageEl}>
                 {
                         // iterate over the Chats, and only display the messages for the currently active chat session
                         Chats.map(chat => {
                             if(chat.contactId === currentContactId[0])
                                 return<Message chat={chat} user={agentUsername} />
+                            else
+                                return null;
                             }
                         )
                     }
