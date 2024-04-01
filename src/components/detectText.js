@@ -7,7 +7,7 @@ async function DetectChatText(content) {
             source: {
                 text: content,
             },
-            type: "ALL"
+            type: 'all'
         }
     })
     return detectLang

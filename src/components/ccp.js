@@ -54,7 +54,7 @@ const Ccp = () => {
                 } 
         }
         // If the contatId was not found in the store, or the store is empty, perform dectText API to comprehend
-        if (localLanguageTranslate.length == 0 || textLang === ''){
+        if (localLanguageTranslate.length === 0 || textLang === ''){
             let tempLang = await detectText(content);
             textLang = tempLang.textInterpretation.language
         }
