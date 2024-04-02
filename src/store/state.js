@@ -84,6 +84,7 @@ const { setGlobalState, useGlobalState } = createGlobalState({
 
 export const addChat = (Chats, contactId) => {
     setGlobalState("Chats", Chats);
+    console.log(contactId)
 };
 
 export const clearChat = () => {
