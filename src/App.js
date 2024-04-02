@@ -13,20 +13,17 @@ function App({ signOut, user }) {
   const [isConfigured, setIsConfigured] = useState(false);
   
   //useEffect(() => {
-    //configureAuth();
-    //signedIn();
   //}, []);
 
-  //const configureAuth = () => {
   const configureAuth = () => {
     Amplify.configure(awsconfig);
-    autoSignIn();
     setIsConfigured(true);
   };
+  const signedIn = async () => {
+    await autoSignIn();
+  };
   configureAuth();
-  //};
-  //const signedIn = async () => {
-  //};
+  signedIn();
 
   return (
     <div className="App">
