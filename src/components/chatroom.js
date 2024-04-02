@@ -107,17 +107,13 @@ const Chatroom = (props) => {
 
     return (
         <div className="chatroom">
-                <h3>Translate - ({languageTranslate.map(lang => {if(lang.contactId === currentContactId[0])return lang.lang
-                else 
-                    return null})}) {getKeyByValue(languageOptions)}</h3>
+                <h3>Translate - ({languageTranslate.map(lang => {if(lang.contactId === currentContactId[0])return lang.lang})}) {getKeyByValue(languageOptions)}</h3>
                 <ul className="chats" ref={messageEl}>
                 {
                         // iterate over the Chats, and only display the messages for the currently active chat session
                         Chats.map(chat => {
                             if(chat.contactId === currentContactId[0])
                                 return<Message chat={chat} user={agentUsername} />
-                            else
-                                return null;
                             }
                         )
                     }

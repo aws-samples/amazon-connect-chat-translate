@@ -22,12 +22,15 @@ const Ccp = () => {
     const [agentChatSessionState, setAgentChatSessionState] = useState([]);
     const [setRefreshChild] = useState([]);
 
-    
+    console.log(lang)
+    console.log(currentContactId)
+    console.log(Chats)
 
     // *******
     // Subscribe to the chat session
     // *******
     function getEvents(contact, agentChatSession) {
+        console.log(agentChatSession);
         contact.getAgentConnection().getMediaController().then(controller => {
             controller.onMessage(messageData => {
                 if (messageData.chatDetails.participantId === messageData.data.ParticipantId) {
@@ -46,6 +49,7 @@ const Ccp = () => {
     // *******
     async function processChatText(content, type, contactId) {
         // Check if we know the language for this contactId, if not use dectectText(). This process means we only perform comprehend language detection at most once.
+        console.log(type);
         let textLang = '';
           for(var i = 0; i < languageTranslate.length; i++) {
                 if (languageTranslate[i].contactId === contactId) {
@@ -68,6 +72,7 @@ const Ccp = () => {
           }
         upsert(languageTranslate, {contactId: contactId, lang: textLang})
         setLanguageTranslate(languageTranslate);
+        setLang(textLang)
                 
         // Translate the customer message into English.
         let translatedMessage = await translateText(content, textLang, 'en');
