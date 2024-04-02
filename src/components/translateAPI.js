@@ -1,7 +1,8 @@
 import { post } from '@aws-amplify/api';
-import awsconfig from ".../aws-exports";
 import { Amplify } from 'aws-amplify';
+import awsconfig from '../aws-exports';
 
+//Amplify.configure(awsconfig);
 const existingConfig = Amplify.getConfig(awsconfig);
 
 async function ProcessChatTextAPI(content, sourceLang, targetLang, terminologyNames) {
