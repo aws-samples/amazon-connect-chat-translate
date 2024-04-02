@@ -72,7 +72,6 @@ const Ccp = () => {
           }
         upsert(languageTranslate, {contactId: contactId, lang: textLang})
         setLanguageTranslate(languageTranslate);
-        setLang(textLang)
                 
         // Translate the customer message into English.
         let translatedMessage = await translateText(content, textLang, 'en');
