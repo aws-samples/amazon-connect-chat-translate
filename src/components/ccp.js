@@ -9,9 +9,6 @@ import { addChat, setLanguageTranslate, clearChat, useGlobalState, setCurrentCon
 
 Amplify.configure(awsconfig);
 
-
-
-
 const Ccp = () => {
     const [languageTranslate] = useGlobalState('languageTranslate');
     var localLanguageTranslate = [];
@@ -159,7 +156,9 @@ const Ccp = () => {
                     console.log("CDEBUG ===> onDestroy() >> contactId: ", contact.contactId);
                     // TODO need to remove the previous chats from the store
                     //clearChat()
-                    setCurrentContactId('')
+                    setCurrentContactId('');
+                    clearChat();
+                    setLang('');
                 });
             });
 
