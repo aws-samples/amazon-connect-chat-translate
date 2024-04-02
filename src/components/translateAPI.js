@@ -1,5 +1,5 @@
 import { post } from '@aws-amplify/api';
-import awsconfig from "./aws-exports";
+import awsconfig from ".../aws-exports";
 import { Amplify } from 'aws-amplify';
 
 const existingConfig = Amplify.getConfig(awsconfig);
