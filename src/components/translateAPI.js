@@ -1,7 +1,12 @@
 import { post } from '@aws-amplify/api';
+import awsconfig from "./aws-exports";
+import { Amplify } from 'aws-amplify';
+
+const existingConfig = Amplify.getConfig(awsconfig);
 
 async function ProcessChatTextAPI(content, sourceLang, targetLang, terminologyNames) {
-    const apiName = 'amazonTranslateAPI';
+    //const apiName = 'amazonTranslateAPI';
+    const apiName = existingConfig.API?.REST.apiName;
     const path = '/translate';
     const myInit = { // OPTIONAL
         body: { 'content': content, 'sourceLang': sourceLang, 'targetLang': targetLang, 'terminologyNames': terminologyNames },
