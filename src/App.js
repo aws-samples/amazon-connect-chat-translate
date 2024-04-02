@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 import './App.css';
 import 'semantic-ui-less/semantic.less';
 import Ccp from './components/ccp';
-import { autoSignIn } from '@aws-amplify/auth';
+//import { autoSignIn } from '@aws-amplify/auth';
 
 // Component
 function App({ signOut, user }) {
@@ -17,13 +17,17 @@ function App({ signOut, user }) {
 
   const configureAuth = () => {
     Amplify.configure(awsconfig);
+  };
+  if (isConfigured === false){
+    configureAuth();
     setIsConfigured(true);
   };
-  const signedIn = async () => {
-    await autoSignIn();
-  };
-  configureAuth();
-  signedIn();
+  //configureAuth();
+  //const signedIn = async () => {
+    //await autoSignIn();
+  //};
+  
+  //signedIn();
 
   return (
     <div className="App">
