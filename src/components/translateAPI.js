@@ -1,4 +1,4 @@
-import { post } from '@aws-amplify/api-rest';
+import { post } from '@aws-amplify/api';
 
 async function ProcessChatTextAPI(content, sourceLang, targetLang, terminologyNames) {
     const apiName = 'amazonTranslateAPI';
@@ -13,8 +13,14 @@ async function ProcessChatTextAPI(content, sourceLang, targetLang, terminologyNa
     console.log("ProcessChatTextAPI: ", terminologyNames);
     console.log("ProcessChatTextAPI: ", path);
     console.log("ProcessChatTextAPI: ", myInit);
+    console.log("API Name: ", apiName);
     try {
-        var result = await post(apiName, path, myInit).response
+        var result = await post(apiName, path, myInit,).response;
+        var isSuccess = await result.json();
+        if (isSuccess.success) {
+            console.log("ProcessChatTextAPI: ", isSuccess.data);
+            return isSuccess.data;
+        }
         console.log("ProcessChatTextAPI: ", result);
         return result;
     }
