@@ -1,4 +1,4 @@
-import { post } from '@aws-amplify/api';
+import { post } from '@aws-amplify/api-rest';
 
 async function ProcessChatTextAPI(content, sourceLang, targetLang, terminologyNames) {
     const apiName = 'amazonTranslateAPI';
@@ -11,7 +11,6 @@ async function ProcessChatTextAPI(content, sourceLang, targetLang, terminologyNa
     console.log("ProcessChatTextAPI: ", sourceLang);
     console.log("ProcessChatTextAPI: ", targetLang);
     console.log("ProcessChatTextAPI: ", terminologyNames);
-    console.log("ProcessChatTextAPI: ", apiName);
     console.log("ProcessChatTextAPI: ", path);
     console.log("ProcessChatTextAPI: ", myInit);
     try {
