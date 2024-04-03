@@ -19,7 +19,7 @@ async function ProcessChatTextAPI(content, sourceLang, targetLang, terminologyNa
         var result = await post({
             apiName,
             path,
-            myInit,
+            options: myInit,
         }).response
         console.log("ProcessChatTextAPI: ", result);
         return result; // result.data; // result.data.body; // result.data.body.content; // result.data.body.sourceLang; // result.data.body.targetLang; // result.data.body.terminologyNames; // result.data.body.translatedText
