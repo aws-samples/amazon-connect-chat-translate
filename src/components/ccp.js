@@ -21,7 +21,7 @@ const Ccp = () => {
 
     console.log(lang)
     console.log(currentContactId)
-    console.log(Chats)
+    //console.log(Chats)
 
     // *******
     // Subscribe to the chat session
