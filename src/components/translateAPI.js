@@ -1,10 +1,10 @@
 import { post } from '@aws-amplify/api';
 
-async function ProcessChatTextAPI(content, sourceLang, targetLang, terminologyNames) {
+async function ProcessChatTextAPI(content, sourceLang, targetLang) {
     const apiName = 'amazonTranslateAPI';
     const path = '/translate';
     const myInit = { // OPTIONAL
-        body: { 'content': content, 'sourceLang': sourceLang, 'targetLang': targetLang, 'terminologyNames': terminologyNames },
+        body: { 'content': content, 'sourceLang': sourceLang, 'targetLang': targetLang },
         headers: {
         }, // OPTIONAL
     };
@@ -23,7 +23,6 @@ async function ProcessChatTextAPI(content, sourceLang, targetLang, terminologyNa
     } catch (error) {
         console.error('Translation failed:', error);
         throw error;
-    
     }
 }
 export default ProcessChatTextAPI
