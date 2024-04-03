@@ -17,12 +17,14 @@ async function ProcessChatTextAPI(content, sourceLang, targetLang) {
     console.log("ProcessChatTextAPI: ", myInit);
     console.log("API Name: ", apiName);
     try {
-        var result = await post({
+        var tlatedmsg = await post({
             apiName,
             path,
             options: myInit,
-        }).response
-        console.log("ProcessChatTextAPI: ", result);
+        });
+        var { resp } = await tlatedmsg.response;
+        var result = await resp.json();
+        console.log("Translated Message: ", result);
         return result; // result.data; // result.data.body; // result.data.body.content; // result.data.body.sourceLang; // result.data.body.targetLang; // result.data.body.terminologyNames; // result.data.body.translatedText
     }
     catch (error) {
