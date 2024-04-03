@@ -12,11 +12,10 @@ const Chatroom = (props) => {
     const [newMessage, setNewMessage] = useState("");
     const [languageTranslate] = useGlobalState('languageTranslate');
     const [languageOptions] = useGlobalState('languageOptions');
-    const agentUsername = "agent";
+    const agentUsername = 'AGENT';
     const messageEl = useRef(null);
     const input = useRef(null);
-
-
+    
     function getKeyByValue(object) {
         let obj = languageTranslate.find(o => o.contactId === currentContactId[0]);
         if(obj === undefined) {

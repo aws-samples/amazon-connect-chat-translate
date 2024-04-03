@@ -149,6 +149,7 @@ const Ccp = () => {
                 // This is invoked when the agent moves to ACW
                 contact.onEnded(() => {
                     console.log("CDEBUG ===> onEnded() >> contactId: ", contact.contactId);
+                    setLang('');
                 });
                 
                 // This is invoked when the agent moves out of ACW to a different state
@@ -158,7 +159,6 @@ const Ccp = () => {
                     //clearChat()
                     setCurrentContactId('');
                     clearChat();
-                    setLang('');
                 });
             });
 

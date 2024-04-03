@@ -1,38 +1,29 @@
 import { post } from '@aws-amplify/api';
-import { Amplify } from 'aws-amplify';
-import awsconfig from '../aws-exports';
-
-//Amplify.configure(awsconfig);
-const existingConfig = Amplify.getConfig(awsconfig);
 
 async function ProcessChatTextAPI(content, sourceLang, targetLang, terminologyNames) {
-    //const apiName = 'amazonTranslateAPI';
-    const apiName = existingConfig.API?.REST.apiName;
+    const apiName = 'amazonTranslateAPI';
     const path = '/translate';
     const myInit = { // OPTIONAL
         body: { 'content': content, 'sourceLang': sourceLang, 'targetLang': targetLang, 'terminologyNames': terminologyNames },
-        headers: {}, // OPTIONAL
+        headers: {
+        }, // OPTIONAL
     };
-    console.log("ProcessChatTextAPI: ", content);
-    console.log("ProcessChatTextAPI: ", sourceLang);
-    console.log("ProcessChatTextAPI: ", targetLang);
-    console.log("ProcessChatTextAPI: ", terminologyNames);
-    console.log("ProcessChatTextAPI: ", path);
-    console.log("ProcessChatTextAPI: ", myInit);
-    console.log("API Name: ", apiName);
     try {
-        var result = await post(apiName, path, myInit,).response;
-        var isSuccess = await result.json();
-        if (isSuccess.success) {
-            console.log("ProcessChatTextAPI: ", isSuccess.data);
-            return isSuccess.data;
-        }
+        const result = await post({
+            apiName,
+            path,
+            myInit,
+        }).response
         console.log("ProcessChatTextAPI: ", result);
-        return result;
-    }
-    catch (error) {
-        console.error("ProcessChatTextAPI: ", error);
-        return error;
+        const translatedText = result.data.body.translatedText;
+        console.log('Translated Text:', translatedText);
+
+        return translatedText;
+    //return result; // result.data; // result.data.body; // result.data.body.content; // result.data.body.sourceLang; // result.data.body.targetLang; // result.data.body.terminologyNames; // result.data.body.translatedText
+    } catch (error) {
+        console.error('Translation failed:', error);
+        throw error;
+    
     }
 }
 export default ProcessChatTextAPI
