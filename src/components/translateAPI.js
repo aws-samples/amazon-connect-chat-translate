@@ -21,9 +21,8 @@ async function ProcessChatTextAPI(content, sourceLang, targetLang) {
             apiName,
             path,
             options: myInit,
-        });
-        var { resp } = await tlatedmsg.response;
-        var result = await resp.json();
+        }).response
+        var result = tlatedmsg.body
         console.log("Translated Message: ", result);
         return result; // result.data; // result.data.body; // result.data.body.content; // result.data.body.sourceLang; // result.data.body.targetLang; // result.data.body.terminologyNames; // result.data.body.translatedText
     }
