@@ -23,7 +23,9 @@ async function ProcessChatTextAPI(content, sourceLang, targetLang) {
             options: myInit,
         }).response
         console.log("Translated Message: ", result);
-        return result; // result.data; // result.data.body; // result.data.body.content; // result.data.body.sourceLang; // result.data.body.targetLang; // result.data.body.terminologyNames; // result.data.body.translatedText
+        const res = await result.respoonse
+        console.log("Response: ", res);
+        return res; // result.data; // result.data.body; // result.data.body.content; // result.data.body.sourceLang; // result.data.body.targetLang; // result.data.body.terminologyNames; // result.data.body.translatedText
     }
     catch (error) {
         console.error("ProcessChatTextAPI: ", error);
