@@ -23,11 +23,11 @@ async function ProcessChatTextAPI(content, sourceLang, targetLang) {
             options: myInit,
         }).response
         console.log("Translated Message Payload: ", result);
-        const res = JSON.parse(result.data);
+        const res = result.body
         console.log("Translated Message: ", res);
-        const resp = res.body;
+        const resp = await res.json();
         console.log("Response: ", resp);
-        return resp; // result.data; // result.data.body; // result.data.body.content; // result.data.body.sourceLang; // result.data.body.targetLang; // result.data.body.terminologyNames; // result.data.body.translatedText
+        return resp;
     }
     catch (error) {
         console.error("ProcessChatTextAPI: ", error);
