@@ -22,10 +22,12 @@ async function ProcessChatTextAPI(content, sourceLang, targetLang) {
             path,
             options: myInit,
         }).response
-        console.log("Translated Message: ", result);
-        const res = await result.respoonse
-        console.log("Response: ", res);
-        return res; // result.data; // result.data.body; // result.data.body.content; // result.data.body.sourceLang; // result.data.body.targetLang; // result.data.body.terminologyNames; // result.data.body.translatedText
+        console.log("Translated Message Payload: ", result);
+        const res = JSON.parse(result.data);
+        console.log("Translated Message: ", res);
+        const resp = res.body;
+        console.log("Response: ", resp);
+        return resp; // result.data; // result.data.body; // result.data.body.content; // result.data.body.sourceLang; // result.data.body.targetLang; // result.data.body.terminologyNames; // result.data.body.translatedText
     }
     catch (error) {
         console.error("ProcessChatTextAPI: ", error);
