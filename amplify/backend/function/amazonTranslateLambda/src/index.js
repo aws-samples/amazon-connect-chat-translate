@@ -5,7 +5,7 @@ const translate = new AWS.Translate({ apiVersion: '2017-07-01' }); // Fix API ve
 exports.handler = (event, context, callback) => {
   let payload = JSON.parse(event.body);
   console.log("event: ", event);
-  console.log("event: ", payload.terminologyNames);
+  //console.log("event: ", payload.terminologyNames);
   // body: '{"content":"hello","sourceLang":"en","targetLang":"en"}'
 
   let params = {
@@ -15,7 +15,7 @@ exports.handler = (event, context, callback) => {
     /* required */
     Text: payload.content,
     /* required */
-    TerminologyNames: payload.terminologyNames
+    //TerminologyNames: payload.terminologyNames
   };
   console.log("parameters: " + JSON.stringify(params));
 
