@@ -5,7 +5,7 @@
 	"dependencies": {
 		"@aws-amplify/auth": "^6.0.23",
 		"@aws-amplify/core": "6.0.23",
-		"@aws-amplify/predictions": "^6.0.23",
+		"@aws-amplify/predictions": "^6.1.24",
 		"@aws-amplify/storage": "6.0.23",
 		"@aws-amplify/ui-react": "^6.1.6",
 		"@babel/core": "7.24.3",
@@ -21,7 +21,7 @@
 		"@types/node": "*",
 		"amazon-connect-chatjs": "^2.2.4",
 		"amazon-connect-streams": "^2.14.0",
-		"aws-amplify": "^6.0.23",
+		"aws-amplify": "^6.6.2",
 		"aws-cdk-lib": "^2.134.0",
 		"constructs": "^10.3.0",
 		"craco-less": "^3.0.1",
