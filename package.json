@@ -38,7 +38,7 @@
 		"semantic-ui-react": "^2.1.5",
 		"typescript": "^5.4.3",
 		"web-vitals": "^3.5.2",
-		"webpack": "^5.91.0"
+		"webpack": "^5.95.0"
 	},
 	"scripts": {
 		"start": "craco start",
