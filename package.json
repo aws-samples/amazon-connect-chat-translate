@@ -4,7 +4,7 @@
 	"private": true,
 	"dependencies": {
 		"@aws-amplify/auth": "^6.0.23",
-		"@aws-amplify/core": "6.0.23",
+		"@aws-amplify/core": "^6.5.3",
 		"@aws-amplify/predictions": "^6.0.23",
 		"@aws-amplify/storage": "6.0.23",
 		"@aws-amplify/ui-react": "^6.1.6",
@@ -81,7 +81,8 @@
 		"craco-less": "^3.0.1",
 		"json5": "^2.2.3",
 		"typescript": "^5.4.3",
-		"@aws-amplify/storage": "6.0.23",
+		"@aws-amplify/core": "6.5.3",
+		"@aws-amplify/storage": "6.6.16",
 		"@babel/plugin-proposal-private-property-in-object": "^7.21.11"
 	},
 	"overrides": {
@@ -96,5 +97,6 @@
 		"react-use": "^17.2.1",
 		"@aws-amplify/storage": "6.0.23",
 		"typescript": "^5.4.3"
-	}
+	},
+	"packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
