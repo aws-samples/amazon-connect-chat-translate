@@ -149,8 +149,8 @@
     lodash "^4.17.21"
     tslib "^2.5.0"
 
-"@aws-amplify/predictions@^6.1.24":
-  version "6.1.24"
+"@aws-amplify/predictions@^6.0.23":
+  version "6.0.23"
   resolved "https://registry.yarnpkg.com/@aws-amplify/predictions/-/predictions-6.1.24.tgz#b612c613304db0d8f14a8ecfdd4d1e451baef923"
   integrity sha512-iTlRKIkdp4hB6cQGFH3E71qEZ+Yn9LTATGQCuEzMwD6NMFqWLTXd7/oNhtMcQA8kbW9EvPugm45wM8j6b8S4cQ==
   dependencies:
