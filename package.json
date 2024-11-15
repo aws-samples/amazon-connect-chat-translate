@@ -5,7 +5,6 @@
 	"dependencies": {
 		"@aws-amplify/auth": "^6.0.23",
 		"@aws-amplify/core": "6.0.23",
-		"@aws-amplify/core/internals/utils": "6.0.23",
 		"@aws-amplify/predictions": "^6.0.23",
 		"@aws-amplify/storage": "6.0.23",
 		"@aws-amplify/ui-react": "^6.1.6",
