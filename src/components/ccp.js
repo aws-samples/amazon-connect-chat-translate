@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Grid } from 'semantic-ui-react';
 import  { Amplify }  from 'aws-amplify';
 import awsconfig from '../aws-exports';
@@ -18,6 +18,7 @@ const Ccp = () => {
     const [languageOptions] = useGlobalState('languageOptions');
     const [agentChatSessionState, setAgentChatSessionState] = useState([]);
     const [setRefreshChild] = useState([]);
+    const ccpInitialized = useRef(false);
 
     console.log(lang)
     console.log(currentContactId)
@@ -73,12 +74,27 @@ const Ccp = () => {
         // Translate the customer message into English.
         let translatedMessage = await translateText(content, textLang, 'en');
         console.log(`CDEBUG ===>  Original Message: ` + content + `\n Translated Message: ` + translatedMessage);
+        
+        // Sanitize content to prevent XSS - escape HTML entities
+        const sanitizeText = (text) => {
+            if (typeof text !== 'string') return '';
+            return text
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        };
+        
+        const sanitizedContent = sanitizeText(content);
+        const sanitizedTranslatedMessage = sanitizeText(translatedMessage);
+        
         // create the new message to add to Chats.
         let data2 = {
             contactId: contactId,
             username: 'customer',
-            content: <p>{content}</p>,
-            translatedMessage: <p>{translatedMessage}</p>
+            content: <p>{sanitizedContent}</p>,
+            translatedMessage: <p>{sanitizedTranslatedMessage}</p>
         };
         // Add the new message to the store
         addChat(prevMsg => [...prevMsg, data2]);
@@ -189,17 +205,39 @@ const Ccp = () => {
     // Loading CCP
     // *****
     useEffect(() => {
+        // Prevent multiple CCP initializations (fixes multiple window creation issue)
+        if (ccpInitialized.current) {
+            return;
+        }
+        ccpInitialized.current = true;
+
         const connectUrl = process.env.REACT_APP_CONNECT_INSTANCE_URL;
+        const region = process.env.REACT_APP_CONNECT_REGION || 'us-east-1';
+        
+        // Validate Connect URL to prevent XSS
+        const validUrlPattern = /^https:\/\/[\w-]+\.(awsapps\.com|my\.connect\.aws)(\/.*)?$/;
+        if (!connectUrl || !validUrlPattern.test(connectUrl)) {
+            console.error('Invalid Connect instance URL');
+            return;
+        }
+
         window.connect.agentApp.initApp(
             "ccp",
             "ccp-container",
             connectUrl + "/connect/ccp-v2/", { 
                 ccpParams: { 
-                    region: process.env.REACT_APP_CONNECT_REGION,
-                    pageOptions: {                  // optional
-                        enableAudioDeviceSettings: true, // optional, defaults to 'false'
-                        enablePhoneTypeSettings: true // optional, defaults to 'true'
-                      }
+                    region: region,
+                    loginPopup: true,               // Enable login popup for SAML authentication
+                    loginPopupAutoClose: true,      // Auto-close popup after SAML login
+                    loginUrl: connectUrl + "/connect/login", // SAML login URL
+                    softphone: {
+                        allowFramedSoftphone: true,
+                        disableRingtone: false
+                    },
+                    pageOptions: {
+                        enableAudioDeviceSettings: true,
+                        enablePhoneTypeSettings: true
+                    }
                 } 
             }
         );

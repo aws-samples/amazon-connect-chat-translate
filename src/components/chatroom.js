@@ -72,12 +72,27 @@ const Chatroom = (props) => {
         let translatedMessage = translatedMessageAPI.TranslatedText
 
         console.log(` Original Message: ` + newMessage + `\n Translated Message: ` + translatedMessage);
+        
+        // Sanitize content to prevent XSS - escape HTML entities
+        const sanitizeText = (text) => {
+            if (typeof text !== 'string') return '';
+            return text
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        };
+        
+        const sanitizedNewMessage = sanitizeText(newMessage);
+        const sanitizedTranslatedMessage = sanitizeText(translatedMessage);
+        
         // create the new message to add to Chats.
         let data2 = {
             contactId: currentContactId[0],
             username: agentUsername,
-            content: <p>{newMessage}</p>,
-            translatedMessage: <p>{translatedMessage}</p>, // set to {translatedMessage.TranslatedText} if using custom terminologies
+            content: <p>{sanitizedNewMessage}</p>,
+            translatedMessage: <p>{sanitizedTranslatedMessage}</p>, // set to {translatedMessage.TranslatedText} if using custom terminologies
         };
         // add the new message to the store
         addChat(prevMsg => [...prevMsg, data2]);
