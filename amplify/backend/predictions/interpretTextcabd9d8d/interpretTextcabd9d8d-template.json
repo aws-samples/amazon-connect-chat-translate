@@ -112,6 +112,9 @@
       "us-west-2": {
         "interpretText": "us-west-2"
       },
+      "ca-central-1": {
+        "interpretText": "ca-central-1"
+      },
       "eu-west-1": {
         "interpretText": "eu-west-1"
       },
