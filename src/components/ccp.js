@@ -196,10 +196,15 @@ const Ccp = () => {
             connectUrl + "/connect/ccp-v2/", { 
                 ccpParams: { 
                     region: process.env.REACT_APP_CONNECT_REGION,
+                    loginPopup: true,               // Enable login popup
+                    loginPopupAutoClose: true,      // Auto-close after login
+                    softphone: {
+                        allowFramedSoftphone: true  // Allow softphone in iframe
+                    },
                     pageOptions: {                  // optional
                         enableAudioDeviceSettings: true, // optional, defaults to 'false'
                         enablePhoneTypeSettings: true // optional, defaults to 'true'
-                      }
+                    }
                 } 
             }
         );
