@@ -190,22 +190,24 @@ const Ccp = () => {
     // *****
     useEffect(() => {
         const connectUrl = process.env.REACT_APP_CONNECT_INSTANCE_URL;
-        window.connect.agentApp.initApp(
-            "ccp",
-            "ccp-container",
-            connectUrl + "/connect/ccp-v2/", { 
-                ccpParams: { 
-                    region: process.env.REACT_APP_CONNECT_REGION,
-                    loginPopup: true,               // Enable login popup
-                    loginPopupAutoClose: true,      // Auto-close after login
-                    softphone: {
-                        allowFramedSoftphone: true  // Allow softphone in iframe
-                    },
-                    pageOptions: {                  // optional
-                        enableAudioDeviceSettings: true, // optional, defaults to 'false'
-                        enablePhoneTypeSettings: true // optional, defaults to 'true'
-                    }
-                } 
+        const ccpUrl = connectUrl + "/ccp-v2#/";
+        
+        console.log("Initializing CCP with URL:", ccpUrl);
+        
+        window.connect.core.initCCP(
+            document.getElementById("ccp-container"),
+            {
+                ccpUrl: ccpUrl,
+                region: process.env.REACT_APP_CONNECT_REGION,
+                loginPopup: true,               // Enable login popup
+                loginPopupAutoClose: true,      // Auto-close after login
+                softphone: {
+                    allowFramedSoftphone: true  // Allow softphone in iframe
+                },
+                pageOptions: {                  
+                    enableAudioDeviceSettings: true,
+                    enablePhoneTypeSettings: true
+                }
             }
         );
         subscribeConnectEvents();
