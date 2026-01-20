@@ -7,6 +7,7 @@ async function ProcessChatTextAPI(content, sourceLang, targetLang) {
         body: { 'content': content, 'sourceLang': sourceLang, 'targetLang': targetLang },
         //body: { 'content': content, 'sourceLang': sourceLang, 'targetLang': targetLang, 'terminologyNames': terminologyNames },
         headers: {
+            'Content-Type': 'application/json'
         }, // OPTIONAL
     };
     console.log("ProcessChatTextAPI: ", content);
@@ -17,16 +18,9 @@ async function ProcessChatTextAPI(content, sourceLang, targetLang) {
     console.log("ProcessChatTextAPI: ", myInit);
     console.log("API Name: ", apiName);
     try {
-        const result = await post({
-            apiName,
-            path,
-            options: myInit,
-        }).response
-        console.log("Translated Message Payload: ", result);
-        const res = result.body
-        console.log("Translated Message: ", res);
-        const resp = await res.json();
-        console.log("Response: ", resp);
+        // Correct Amplify API.post usage
+        const resp = await post(apiName, path, myInit);
+        console.log("Translated Message Payload: ", resp);
         return resp;
     }
     catch (error) {
